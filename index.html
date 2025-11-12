@@ -8,8 +8,8 @@
   <style>
     :root{
       --text:#fff;
-      --muted:#d8d8e0;
-      --card:rgba(10,10,16,.65);
+      --muted:#f0f0f0;
+      --card:rgba(10,10,16,.35);
       --accent:#98f5ff;
       --ring:rgba(152,245,255,.25);
     }
@@ -37,7 +37,7 @@
       content:'';
       position:fixed;
       inset:0;
-      background: rgba(0,0,0,0.25);
+      background: rgba(0,0,0,0.15);
       z-index:1;
     }
     .container{
@@ -62,20 +62,23 @@
       font-weight:700;
       margin-bottom:4px;
       letter-spacing:-.02em;
+      text-shadow:0 2px 4px rgba(0,0,0,.6);
     }
     p{
       color:var(--muted);
       font-size:0.85rem;
       line-height:1.4;
+      text-shadow:0 1px 3px rgba(0,0,0,.5);
     }
     .step{
-      background:rgba(255,255,255,.05);
-      border:1px solid rgba(255,255,255,.2);
+      background:rgba(255,255,255,.02);
+      border:1px solid rgba(255,255,255,.25);
       padding:12px;
       border-radius:10px;
-      font-weight:600;
+      font-weight:700;
       font-size:0.82rem;
       margin-top:8px;
+      text-shadow:0 1px 3px rgba(0,0,0,.5);
     }
     .step:first-of-type{
       margin-top:12px;
