@@ -42,47 +42,47 @@
     }
     .container{
       width:100%;
-      max-width:420px;
+      max-width:340px;
       position:relative;
       z-index:2;
       display:flex;
       flex-direction:column;
-      gap:16px;
+      gap:14px;
     }
     .card{
       background:var(--card);
       border:1px solid rgba(255,255,255,.15);
-      border-radius:18px;
-      padding:20px;
+      border-radius:16px;
+      padding:16px;
       box-shadow:0 20px 60px rgba(0,0,0,.4);
       backdrop-filter:blur(12px) saturate(150%);
     }
     h1{
-      font-size:1.5rem;
+      font-size:1.3rem;
       font-weight:700;
-      margin-bottom:6px;
+      margin-bottom:4px;
       letter-spacing:-.02em;
     }
     p{
       color:var(--muted);
-      font-size:0.9rem;
-      line-height:1.5;
+      font-size:0.85rem;
+      line-height:1.4;
     }
     .step{
       background:rgba(255,255,255,.08);
       border:1px solid rgba(255,255,255,.15);
-      padding:14px;
-      border-radius:12px;
+      padding:12px;
+      border-radius:10px;
       font-weight:600;
-      font-size:0.88rem;
-      margin-top:10px;
+      font-size:0.82rem;
+      margin-top:8px;
     }
     .step:first-of-type{
-      margin-top:16px;
+      margin-top:12px;
     }
     .gif-container{
-      margin-top:16px;
-      border-radius:14px;
+      margin-top:12px;
+      border-radius:12px;
       overflow:hidden;
       border:1px solid rgba(255,255,255,.15);
       box-shadow:0 10px 30px rgba(0,0,0,.3);
@@ -94,26 +94,26 @@
     }
     #finger-pointer{
       position:fixed;
-      top:16px;
-      right:16px;
-      width:48px;
+      top:20px;
+      right:20px;
+      width:50px;
       height:auto;
       z-index:10;
-      animation:bob 1.5s ease-in-out infinite;
+      animation:pointBob 1.2s ease-in-out infinite;
       filter:drop-shadow(0 4px 12px rgba(0,0,0,.6));
       pointer-events:none;
       display:none;
     }
-    @keyframes bob{
-      0%,100%{transform:translateY(0) rotate(-8deg)}
-      50%{transform:translateY(-6px) rotate(-8deg)}
+    @keyframes pointBob{
+      0%,100%{transform:translateY(0)}
+      50%{transform:translateY(-8px)}
     }
     .pointer-wave{
       position:fixed;
-      top:26px;
-      right:26px;
-      width:32px;
-      height:32px;
+      top:32px;
+      right:32px;
+      width:28px;
+      height:28px;
       z-index:9;
       border-radius:999px;
       pointer-events:none;
@@ -122,19 +122,28 @@
     .pointer-wave::before,.pointer-wave::after{
       content:"";
       position:absolute;
-      inset:0;
+      inset:-10px;
       border-radius:999px;
-      border:2px solid var(--accent);
-      animation:ripple 1.8s ease-out infinite;
-      box-shadow:0 0 0 4px var(--ring) inset;
+      border:3px solid #ff3b3b;
+      animation:redPulse 1.5s ease-out infinite;
+      box-shadow:0 0 12px rgba(255,59,59,.6);
     }
     .pointer-wave::after{
-      animation-delay:.9s;
-      opacity:.7;
+      animation-delay:.75s;
+      border-width:2.5px;
     }
-    @keyframes ripple{
-      0%{transform:scale(.6);opacity:.8}
-      100%{transform:scale(2.6);opacity:0}
+    @keyframes redPulse{
+      0%{
+        transform:scale(.7);
+        opacity:1;
+      }
+      50%{
+        opacity:.6;
+      }
+      100%{
+        transform:scale(2.2);
+        opacity:0;
+      }
     }
     .container,.gif-container,#finger-pointer,.pointer-wave{
       display:none;
@@ -146,16 +155,16 @@
       display:flex !important;
     }
     @media (max-width:520px){
-      h1{font-size:1.3rem}
-      .card{padding:18px}
-      .step{font-size:0.85rem;padding:12px}
-      .container{max-width:360px}
+      h1{font-size:1.2rem}
+      .card{padding:14px}
+      .step{font-size:0.78rem;padding:10px}
+      .container{max-width:300px}
     }
   </style>
 </head>
 <body>
   <div class="pointer-wave"></div>
-  <img id="finger-pointer" src="point.gif" alt="Pointer">
+  <img id="finger-pointer" src="finger.png" alt="Pointer">
 
   <div class="container">
     <div class="card">
