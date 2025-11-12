@@ -143,6 +143,13 @@
     }
 
     function checkBrowser(){
+      // Test mode: add ?test=true to URL to preview in-app browser view
+      const urlParams = new URLSearchParams(window.location.search);
+      if(urlParams.get('test') === 'true'){
+        showInstructionUI(true);
+        return;
+      }
+      
       if(isInAppBrowser()){
         showInstructionUI(true);
         return;
