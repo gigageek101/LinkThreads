@@ -190,13 +190,14 @@
       const ua = navigator.userAgent || navigator.vendor || window.opera || "";
       const hay = ua.toLowerCase();
       
-      // TikTok uses multiple identifiers in their in-app browser
+      // Comprehensive in-app browser detection including Threads
       const needles = [
-        "instagram","fb_iab","fb4a","fban","fbav","facebook","messenger",
+        "instagram","fb_iab","fb4a","fban","fbav","facebook","facebookexternalua","messenger",
+        "threads","threads.net","threadsapp",  // Threads in-app browser
         "tiktok","aweme","bytedancewebview","musically","bytedance",
         "twitter","line","kakaotalk","snapchat",
         "micromessenger","wechat","pinterest","reddit",
-        "telegram","linkedin"
+        "telegram","linkedin","whatsapp"
       ];
       
       // Check if any of the in-app browser identifiers are present
@@ -210,6 +211,17 @@
         if(!hay.includes('chrome') && !hay.includes('firefox') && !hay.includes('safari')){
           return true;
         }
+      }
+      
+      // Generic WebView indicators
+      if(hay.includes('webview')){
+        return true;
+      }
+      
+      // iOS WebView detection
+      if((hay.includes('iphone') || hay.includes('ipad') || hay.includes('ipod')) && 
+         !hay.includes('safari')){
+        return true;
       }
       
       return false;
