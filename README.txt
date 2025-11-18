@@ -17,7 +17,7 @@ This folder is ready to deploy.
 
 ## Change Redirect Target
 `index.html` has:
-const TARGET_URL = "https://heyallisonmylinks.netlify.app/";
+const TARGET_URL = "https://onlyfans.com/allison-gray/c35";
 Change this if you want to forward to a different page when NOT in an in-app browser.
 (UTM parameters and hashes are preserved.)
 
